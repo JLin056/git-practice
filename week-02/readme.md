@@ -13,25 +13,25 @@
 ```
 nvm install {版本}
 ```
-![alt text](image.png)
+![image.png](https://github.com/JLin056/git-practice/blob/main/week-02/image/image.png)
 
 選擇想要使用的版本：
 ```
 nvm use {版本}
 ```
-![alt text](image-1.png)
+![image-1.png](https://github.com/JLin056/git-practice/blob/main/week-02/image/image-1.png)
 
 檢察目前有下載哪些版本：
 ```
 nvm ls
 ```
-![alt text](image-2.png)
+![image-2.png](https://github.com/JLin056/git-practice/blob/main/week-02/image/image-2.png)
 
 決定default的版本：
 ```
 nvm alias default {版本}
 ```
-![alt text](image-3.png)
+![image-3.png](https://github.com/JLin056/git-practice/blob/main/week-02/image/image-3.png)
 
 
 ## npm(Node Package Manager)
@@ -40,7 +40,7 @@ nvm alias default {版本}
 
 ### 常見指令
 我們先透過 ``` npm -v ``` 來確認版本。
-![alt text](image-5.png)
+![image-5.png](https://github.com/JLin056/git-practice/blob/main/week-02/image/image-5.png)
 
 再透過以下指令，新增package.json的檔案。
 package.json是用來管理 專案資訊的重要檔案。
@@ -49,7 +49,7 @@ npm init
 ```
 
 package.json的檔案會長得像這樣：
-![alt text](image-4.png)
+![image-4.png](https://github.com/JLin056/git-practice/blob/main/week-02/image/image-4.png)
 
 若想下載套件則是使用下列指令：
 ```
