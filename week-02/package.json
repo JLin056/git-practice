@@ -1,0 +1,13 @@
+{
+  "name": "week-02",
+  "version": "1.0.0",
+  "description": "目前安裝的版本是 v20.17.0. 因為跟小組討論過後，當時最新的lts版本為20！ 因此，我載入的版本為 v20.17.0.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
