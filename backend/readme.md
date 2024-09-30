@@ -1,20 +1,20 @@
 ## 建立 Express 專案
 ### 建立 npm install express
 - 觀察 package.json 的變化
-使用 ``` npm init ``` ，建立 package.json \n
+使用 ``` npm init ``` ，建立 package.json  
 ![alt text](image.png)
 使用 ``` npm install express ``` 後，package.json 變成 ![alt text](image-1.png)
 
 - 觀察 node_modules 裡面有什麼
-（參考資料：https://ithelp.ithome.com.tw/articles/10191783） \n
-專案要使用的函式庫，會安裝在這個資料夾底下 \n
-觀察下來，一個函式庫會有一個資料夾，裡面放他所需要的東西！ \n
+（參考資料：https://ithelp.ithome.com.tw/articles/10191783）  
+專案要使用的函式庫，會安裝在這個資料夾底下  
+觀察下來，一個函式庫會有一個資料夾，裡面放他所需要的東西！  
 這樣可以避免衝突問題，但是會較耗費空間。 
 
 ### package.json 的 dependencies & devDependencies
-（參考資料：https://hackmd.io/@Hsuan93625/HkUdUG8zd#dependencies與devDependencies） \n
+（參考資料：https://hackmd.io/@Hsuan93625/HkUdUG8zd#dependencies與devDependencies）
 #### dependencies
-用途：專案"執行"時所需的套件 \n
+用途：專案"執行"時所需的套件  
 例如：
 ``` 
 "dependencies": {
@@ -24,18 +24,18 @@
 這個例子就代表 express 是專案運行所需要的，如果部署專案或在伺服器上運行時，就會被自動安裝
 
 #### devDependencies
-用途：專案在"開發"時所需的套件，通常不會在應用程式運行時使用，只單純在開發時應用 \n
+用途：專案在"開發"時所需的套件，通常不會在應用程式運行時使用，只單純在開發時應用  
 例如：
 ```
 "devDependencies": {
   "eslint": "^7.21.0"
 }
 ```
-eslint 是開發過程中會用來檢查程式碼語法的工具。\n
+eslint 是開發過程中會用來檢查程式碼語法的工具。  
 因此，只有在開發時才會使用到，並不會在應用程式運行時用到，所以放在 devDependencies
 
 ### package.json 中的 scripts
-（參考資料：https://hackmd.io/@Hsuan93625/HkUdUG8zd#dependencies與devDependencies） \n
+（參考資料：https://hackmd.io/@Hsuan93625/HkUdUG8zd#dependencies與devDependencies）  
 用來定義編寫模組中使用的腳本，像建立 Express 專案的腳本可以這樣寫：
 ```
 "scripts": {
@@ -60,22 +60,22 @@ eslint 是開發過程中會用來檢查程式碼語法的工具。\n
 用 require 函數來導入模塊，module.exports 或 exports 定義導出的內容
 
 - ESM
-從ES6開始引入，用 import 和 export 定義和導入模塊。 \n
+從ES6開始引入，用 import 和 export 定義和導入模塊。  
 為目前主流的模塊系統，並且為 JavaScript 的官方模塊系統。
 
 - CJS vs ESM
-語法不同，CJS 用 require、module.exports，ESM 用 import、export  \n
-ESM 需要在 script 標籤使用 type = "module" ，CJS 用於 Node.js \n
+語法不同，CJS 用 require、module.exports，ESM 用 import、export  
+ESM 需要在 script 標籤使用 type = "module" ，CJS 用於 Node.js 
 
 ### localhost
-（參考資料：https://www.freecodecamp.org/news/what-is-localhost/）
-把電腦自身當作"伺服器"，在本機運行網站進行測試，而不是連接到網際網路。\n
+（參考資料：https://www.freecodecamp.org/news/what-is-localhost/）  
+把電腦自身當作"伺服器"，在本機運行網站進行測試，而不是連接到網際網路。  
 localhost 通常搭配 port number，讓一台電腦可以同時運行多個伺服器
 
 ### curl 是什麼？查查看怎麼用 curl 來測試網路連線？常用參數有哪些？
 （參考資料：https://blog.techbridge.cc/2019/02/01/linux-curl-command-tutorial/）
 #### curl
-是在 Linux 上用來透過 HTTP Protocol 下載和上傳檔案的指令。\n
+是在 Linux 上用來透過 HTTP Protocol 下載和上傳檔案的指令。  
 通常基本用法是：
 ```
 curl {URL}
