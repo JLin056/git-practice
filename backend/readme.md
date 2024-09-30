@@ -2,8 +2,9 @@
 ### 建立 npm install express
 - 觀察 package.json 的變化
 使用 ``` npm init ``` ，建立 package.json  
-![alt text](/backend/asset/image/npm%20init.png)
-使用 ``` npm install express ``` 後，package.json 變成 ![alt text](/backend/asset/image/npm%20install.png)
+![alt text](/backend/asset/image/npm%20init.png)  
+使用 ``` npm install express ``` 後，package.json 變成  
+![alt text](/backend/asset/image/npm%20install.png)
 
 - 觀察 node_modules 裡面有什麼
 （參考資料：https://ithelp.ithome.com.tw/articles/10191783）  
