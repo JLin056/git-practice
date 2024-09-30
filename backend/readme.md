@@ -2,8 +2,8 @@
 ### 建立 npm install express
 - 觀察 package.json 的變化
 使用 ``` npm init ``` ，建立 package.json  
-![alt text](image.png)
-使用 ``` npm install express ``` 後，package.json 變成 ![alt text](image-1.png)
+![alt text](/backend/asset/image/npm%20init.png)
+使用 ``` npm install express ``` 後，package.json 變成 ![alt text](/backend/asset/image/npm%20install.png)
 
 - 觀察 node_modules 裡面有什麼
 （參考資料：https://ithelp.ithome.com.tw/articles/10191783）  
@@ -43,7 +43,7 @@ eslint 是開發過程中會用來檢查程式碼語法的工具。
 }
 ```
 這樣子設置完之後，輸入 ``` npm start ``` 則會自動執行 ``` node app.js ``` 的指令，如下圖：
-![alt text](image.png) 
+![alt text](/backend/asset/image/npm%20start.png) 
 
 ### Port number 要怎麼以環境變數來設定？
 我將原本的 ```const port = 3000; ``` 改成 ``` const port = process.env.PORT || 3000; // 設置環境變數，沒設定的話 預設3000 ``` 
@@ -99,14 +99,14 @@ curl {URL}
 以 google 為例，我輸入：
 ``` curl https://www.google.com ``` 
 則會回傳 HTML 內容，如下圖：
-![alt text](image.png)
+![alt text](/backend/asset/image/curl.png)
 
 若只想顯示狀態，測試方式則為：
 ``` 
 curl -I https://www.google.com
 ```
 則會回傳 HTTP header，如下圖 200 則為連線成功。
-![alt text](image-1.png)
+![alt text](/backend/asset/image/curl%20-I.png)
 
 #### 常用參數
 - -I：僅顯示 HTTP header 資訊
