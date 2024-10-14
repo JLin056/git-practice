@@ -3,7 +3,7 @@
 - [x] Readme 問題回答
 
 ##  Readme 回答
-1. Public IP
+1. Public IP  
 52.65.5.19
 
 2. 什麼是 Instance type ?  
@@ -55,7 +55,7 @@ sudo 其實是「Super User DO」的縮寫，代表這個指令是透過 Super U
 若要更改電腦的網路設定、查看某些密鑰、更改系統設定...等等，則需要加上 sudo。因此，若只是操作個人檔案，或啟動已有適當權限的應用程式則不需要使用 sudo，避免指令使用不當的情況。  
 
 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？  
-因為在步驟 9 的時候，一直沒有連成功，所以當時找了一些解決文章，有提到，找到 log 檔的。  
+因為在步驟 9 的時候，一直沒有連成功，所以當時找了一些解決文章，有提及可以看 log，因而找到 log 檔的。  
 有兩個 Log 檔，為 access.log 和 error.log，通常在 /var/log/nginx/ 目錄下。  
 若是要及時查看最新的請求或錯誤，可以輸入 ```tail -f /var/log/nginx/error.log``` 查看 error.log
 
