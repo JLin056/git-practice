@@ -38,4 +38,5 @@ IPv6：是為了解決 IPv4 地址耗盡的問題而設計的，以八組四個�
 https://notesstartup.com/what-is-dns/  
 - Domain  
 https://www.tsg.com.tw/blog-detail4-183-0-domain.htm
-
+- SSL  
+https://www.design-hu.com/web-news/ssl.html
