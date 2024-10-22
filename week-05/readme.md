@@ -29,6 +29,13 @@ IPv6：是為了解決 IPv4 地址耗盡的問題而設計的，以八組四個�
 完整的域名，包含子網域、頂級網域、根域的名稱。必須以根域（.）結束，通常我們會省略。  
 例如：www.jlintw.online.
 
+## 為什麼應該要為網站加上憑證？而不是直接用 http 就好？  
+原本 http 開頭的網址，網站上所有資料是明碼（未加密）傳輸，對第三方而言，很容易竊取。  
+但若加上憑證，網站和使用者的所有資料就會經過加密後才開始傳送。
+
 ## 參考資料
 - DNS  
-https://notesstartup.com/what-is-dns/
+https://notesstartup.com/what-is-dns/  
+- Domain  
+https://www.tsg.com.tw/blog-detail4-183-0-domain.htm
+
