@@ -4,7 +4,7 @@
 
 ##  Readme 回答
 1. Public IP  
-52.65.5.19
+http://52.65.5.19
 
 2. 什麼是 Instance type ?  
 就像是買電腦時選擇自己的 CPU 和 RAM，Instance type 其實就是 Virtual Machine (VM) 的規格。  
