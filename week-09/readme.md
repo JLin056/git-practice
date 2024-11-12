@@ -19,7 +19,7 @@ sudo nginx -t
 ```  
   
 會出現 error message，如下圖：  
-<img src="../assets/image/nginx_error_message.jpg" width=80%>  
+<img src="week-09/assets/image/nginx_error_message.jpg" width=80%>  
   
 由 error message 可以發現，在 /etc/nginx/nginx.conf 設定檔裡面多了一個 ";"。  
 因此輸入以下指令，將 Nginx 設定檔的 ";" 刪掉。  
@@ -33,7 +33,7 @@ sudo vim /etc/nginx/nginx.conf
 #### high performance web server   
   
 輸入```sudo systemctl status nginx``` 檢查目前狀態  
-<img src="../assets/image/nginx_server_disable.jpg" width=80%>  
+<img src="week-09/assets/image/nginx_server_disable.jpg" width=80%>  
   
 下方可以看到 **A high performance web server and a reverse proxy server...**  
 代表有人佔用 80 port。  
@@ -42,12 +42,12 @@ sudo vim /etc/nginx/nginx.conf
 ```
 sudo lsof -i :80
 ```  
-<img src="../assets/image/lsof_i_80.jpg" width=80%>  
+<img src="week-09/assets/image/lsof_i_80.jpg" width=80%>  
   
 將他 kill 掉，指令如下：```sudo kill {PID}```  
   
 輸入```sudo systemctl status nginx``` 檢查目前狀態，  
-<img src="../assets/image/lsof_i_80.jpg" width=80%>  
+<img src="week-09/assets/image/lsof_i_80.jpg" width=80%>  
 可以看到成功了，沒有被佔用了。  
 
 #### 防火牆  
@@ -55,7 +55,7 @@ sudo lsof -i :80
 上述步驟都做完後，並無連線成功，若用網站的方式，會跳出 **請檢查 Proxy 和 防火牆**，因此聯想到防火牆的問題。（還有好心同學的提示><）  
   
 先輸入指令： ```sudo iptables -L```  
-<img src="../assets/image/iptables.jpg" width=80%>  
+<img src="week-09/assets/image/iptables.jpg" width=80%>  
   
 會發現它將所有進入的 HTTP（port 80）TCP 流量拒絕(REJECT)，並返回 icmp-port-unreachable 的訊息  
 因此，要刪除此規則  
@@ -66,22 +66,22 @@ sudo lsof -i :80
 #### 權限問題  
   
 連線後，網站出現**403 Forbidden**，如下圖：  
-<img src="../assets/image/403.jpg" width=80%>  
+<img src="week-09/assets/image/403.jpg" width=80%>  
 
 懷疑是檔案權限問題，因此先去看檔案存在哪裡  
 指令：```sudo vim /etc/nginx/sites-available/default```  
   
-<img src="../assets/image/index_html.jpg" width=80%>  
+<img src="week-09/assets/image/index_html.jpg" width=80%>  
   
 可以發現，檔案在 **/var/myweb** 的資料夾，並且名為 **index.html**  
 這時先去該檔案夾看 **index.html**  
 指令：```cat index.html```  
-<img src="../assets/image/cat_index_html.jpg" width=80%>  
+<img src="week-09/assets/image/cat_index_html.jpg" width=80%>  
   
 可以發現我們沒有權限，因此更改權限設置，變成所有人可讀  
 指令：```sudo chmod 644 index.html```  
   
-<img src="../assets/image/final.jpg" width=80%>  
+<img src="week-09/assets/image/final.jpg" width=80%>  
 這樣則成功了！  
   
 ## 心得  
