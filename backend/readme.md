@@ -47,13 +47,32 @@ eslint 是開發過程中會用來檢查程式碼語法的工具。
 ![alt text](/backend/asset/image/npm%20start.png) 
 
 ### Port number 要怎麼以環境變數來設定？
+#### 法一：在腳本中設置環境變數
 我將原本的 ```const port = 3000; ``` 改成 ``` const port = process.env.PORT || 3000; // 設置環境變數，沒設定的話 預設3000 ``` 
-因此，若想用 scripts 的腳本時，就可以輸入 ``` PORT=5000 npm start ``` 就會變成不同的端口
+因此，若想用 scripts 的腳本時，就可以輸入 ``` PORT=5000 npm start ``` 就會變成不同的端口  
+- 優點：簡單快速
+- 缺點：當變數多時，指令會變得複雜，尤其在共同開發時，無法輕鬆分享設定，對於團隊協作不友好  
+#### 法二：使用 `.env`及 `.env.example` 文件  
+將所需的環境變數寫在 `.env.example` 的檔案，共同開發的人，就可以將在自己的環境新增 `.env` 的檔案做使用  
+1. 需先下載 dotenv 套件  
+``` npm install dotenv ```
+2. 新增`.env` : 添加環境變數
+example: ```PORT=3000```
+3. 在程式碼中新增 ``` require('dotenv').config();``` 載入 `.env` 檔
+4. 為了方便共同開發，將使用到的環境變數放入 `.env.example`，並且要注意 不能將密碼或敏感訊息放入裡面  
+5. 在 .gitignore 新增 `.env`，避免 `.env` 被提交  
+  
+此方法的優缺點：
+- 優點：方便協作，環境變數管理輕鬆，當變數多時，指令不會過於複雜
+- 缺點：要小心敏感資料的傳入（.gitignore 的重要）
+
 
 ### 關於哪些檔案應該要被放上 github repo 這個問題，描述看看為什麼你選擇上傳某些檔案、選擇不上傳某些檔案，決策的要素是什麼？
 - 選擇上傳：app.js, package.json, package-lock.json, readme.md, asset/image
 - 不選擇上傳：node_modules
-- 決策的要素：必要的檔案（例如image沒有上傳，圖片就不能顯示 或是 package.json 沒上傳，就不能說明需要什麼套件...等等，讓其他人更了解專案）
+- 決策的要素：
+  - 必要的檔案（例如 package.json 沒上傳，就不能說明需要什麼套件...等等）需放入，讓其他人更了解專案
+  - 牽涉敏感資料的檔案、非專案相關僅測試時的資料，則不放入
 
 ### CJS & ESM
 （參考資料：https://vocus.cc/article/649cc0e0fd89780001a7d34d）
@@ -65,8 +84,10 @@ eslint 是開發過程中會用來檢查程式碼語法的工具。
 為目前主流的模塊系統，並且為 JavaScript 的官方模塊系統。
 
 - CJS vs ESM
-語法不同，CJS 用 require、module.exports，ESM 用 import、export  
-ESM 需要在 script 標籤使用 type = "module" ，CJS 用於 Node.js 
+  - 語法不同，CJS 用 require、module.exports，ESM 用 import、export  
+  - ESM 需要在 script 標籤使用 type = "module" ，CJS 用於 Node.js  
+  - 目前的主流為 ESM，是官方的模塊系統，自 ES6 開始引入。  
+    因此我認為，除了專案開發需求時，必須使用舊的 npm 套件以外，通常以 ESM 為主
 
 ### localhost
 （參考資料：https://www.freecodecamp.org/news/what-is-localhost/）  
